@@ -8,7 +8,7 @@ body {
     overflow: hidden;
 }
 canvas {
-    /* background: linear-gradient(200deg, #09431d, #4d054d); */
+    background: linear-gradient(200deg, #09431d, #4d054d);
     /* Use gold or cyan for the buttons or highlights */
     top: 0;
     left: 0;
