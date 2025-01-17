@@ -15,10 +15,22 @@ export default class Player {
         this.weight = 1
         this.frameX = 0
         this.frameY = 0
+        this.maxFrame = 6
         this.speed = 0
         this.maxSpeed = 10
+        this.fps = 120
+        this.framerTimer = 0 
+        this.framerInterval = 1000/this.fps
     }
-    draw(context){
+    draw(context, deltaTime){
+        if (this.framerTimer > this.framerInterval){
+            if (this.frameX < this.maxFrame) this.frameX++
+            else this.frameX = 0
+            this.framerTimer = 0
+        } else {
+            this.framerTimer += deltaTime
+        }
+
         context.drawImage(this.image, this.width * this.frameX, this.height * this.frameY, this.width, this.height, this.x, this.y, this.width, this.height)
     }
     update(input){
